@@ -67,4 +67,128 @@ This project follows the principles of Clean Architecture, separating the soluti
 #### Swagger Documentation
 
 The API includes Swagger documentation. To explore the API endpoints and test them, navigate to:
+<div>
+    ![logging](https://github.com/user-attachments/assets/9467a6f9-b77f-4918-b18d-6c61f72d5de0)![2](https://github.com/user-attachments/assets/222f4bd5-05c9-4343-a252-cec3b24d9332)
+    <img src="https://github.com/user-attachments/assets/222f4bd5-05c9-4343-a252-cec3b24d9332">
+    <img src="https://github.com/user-attachments/assets/9467a6f9-b77f-4918-b18d-6c61f72d5de0">
+
+</div>
+
+
+#### User Registration and Authentication
+
+- **Register a new user**
+
+    ```http
+    POST /api/Users/register
+    ```
+
+    Request body:
+    ```json
+    {
+        "username": "johndoe",
+        "email": "johndoe@example.com",
+        "password": "P@ssw0rd"
+    }
+    ```
+
+- **Login**
+
+    ```http
+    POST /api/Users/login
+    ```
+
+    Request body:
+    ```json
+    {
+        "email": "johndoe@example.com",
+        "password": "P@ssw0rd"
+    }
+    ```
+
+#### Blog Posts
+
+- **Create a blog post**
+
+    ```http
+    POST /api/BlogPosts
+    ```
+
+    Request body:
+    ```json
+    {
+        "title": "My First Blog Post",
+        "content": "This is the content of my first blog post."
+    }
+    ```
+
+- **Get all blog posts**
+
+    ```http
+    GET /api/BlogPosts
+    ```
+
+- **Get a blog post by ID**
+
+    ```http
+    GET /api/BlogPosts/{id}
+    ```
+
+- **Update a blog post**
+
+    ```http
+    PUT /api/BlogPosts/{id}
+    ```
+
+    Request body:
+    ```json
+    {
+        "title": "Updated Title",
+        "content": "Updated content."
+    }
+    ```
+
+- **Delete a blog post**
+
+    ```http
+    DELETE /api/BlogPosts/{id}
+    ```
+
+#### Comments
+
+- **Add a comment to a blog post**
+
+    ```http
+    POST /api/BlogPosts/{blogPostId}/comments
+    ```
+
+    Request body:
+    ```json
+    {
+        "commenterName": "Jane Doe",
+        "commenterEmail": "jane.doe@example.com",
+        "text": "This is a comment."
+    }
+    ```
+
+#### Follow/Unfollow Users
+
+- **Follow a user**
+
+    ```http
+    POST /api/Users/{userIdToFollow}/follow
+    ```
+
+- **Unfollow a user**
+
+    ```http
+    DELETE /api/Users/{userIdToUnfollow}/unfollow
+    ```
+
+## Logging
+
+Logging is configured using Serilog. Logs are written to the console and to files in the `Logs` directory with a rolling interval of one day.
+
+## Project Structure
+
 
